@@ -39,9 +39,9 @@ else
 		r.data.numSets = p.data.numSets + q.data.numSets;
 
 		% object specific fields
-		r.data.dlist = [p.data.dlist; q.data.dlist];
-		r.data.setIndex = [p.data.setIndex; (p.data.setIndex(end) ...
-			+ q.data.setIndex(2:end))];
+	r.data.rates = concat(p.data.rates,q.data.rates,'Columnwise');
+	r.data.avgrate = [p.data.avgrate; q.data.avgrate];
+
 			
 		% add nptdata objects as well
 		r.nptdata = plus(p.nptdata,q.nptdata);
