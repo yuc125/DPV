@@ -1,4 +1,4 @@
-function [obj, varargout] = dirfiles(varargin)
+function [obj, varargout] = vmspikerates(varargin)
 %@dirfiles Constructor function for DIRFILES class
 %   OBJ = dirfiles(varargin)
 %
@@ -26,7 +26,7 @@ Args.DataCheckArgs = {};
 
 % variable specific to this class. Store in Args so they can be easily
 % passed to createObject and createEmptyObject
-Args.classname = 'dirfiles';
+Args.classname = 'vmspikerates';
 Args.matname = [Args.classname '.mat'];
 Args.matvarname = 'df';
 
