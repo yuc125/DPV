@@ -3,10 +3,10 @@ function [obj, varargout] = plot(obj,varargin)
 %   OBJ = plot(OBJ) creates a raster plot of the neuronal
 %   response.
 
-Args = struct('LabelsOff',0, 'GroupPlots',1, 'GroupPlotIndex',1, …
-'Color','b', 'ReturnVars',{''}, 'ArgsOnly',0, 'Cmds','', …
-'Boxplot',0);
+Args = struct('LabelsOff',0, 'GroupPlots',1, 'GroupPlotIndex',1,'Color','b', 'ReturnVars',{''}, 'ArgsOnly',0, 'Cmds','','Boxplot',0);
 Args.flags = {'LabelsOff','ArgsOnly','Boxplot'};
+
+
 
 [Args,varargin2] = getOptArgs(varargin,Args);
 
@@ -16,6 +16,15 @@ if Args.ArgsOnly
     varargout{1} = {'Args',Args};
     return;
 end
+
+n = Args.NumericArguments{1};
+if(Args.Boxplot)
+	boxplot(obj.data.rates(:,n))
+else
+plot(obj.data.rates(:,n),'.')
+end
+sdstr = get(obj,'SessionDirs');
+
 
 if(~isempty(Args.NumericArguments))
 		% plot one data set at a time
