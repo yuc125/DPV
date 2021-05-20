@@ -17,13 +17,13 @@ if Args.ArgsOnly
     return;
 end
 
-n = Args.NumericArguments{1};
-if(Args.Boxplot)
-	boxplot(obj.data.rates(:,n))
-else
-plot(obj.data.rates(:,n),'.')
-end
-sdstr = get(obj,'SessionDirs');
+% n = Args.NumericArguments{1};
+% if(Args.Boxplot)
+% 	boxplot(obj.data.rates(:,n))
+% else
+% plot(obj.data.rates(:,n),'.')
+% end
+% sdstr = get(obj,'SessionDirs');
 
 
 if(~isempty(Args.NumericArguments))
